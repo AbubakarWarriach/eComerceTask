@@ -46,7 +46,7 @@ module.exports.addProduct = (req, res) => {
 
 module.exports.fetchProducts = async(req, res) => {
     const page = req.params.page;
-    const parPage = 2;
+    const parPage = 5;
     const skip = (Number(page)-1)*parPage;
     try {
         const count = await Product.find({}).countDocuments();

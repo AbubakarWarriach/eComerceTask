@@ -2,8 +2,6 @@ export const SET_PRODUTS = "SET_PRODUTS";
 export const SET_SELECTED_PRODUCT = "SET_SELECTED_PRODUCT";
 export const SET_CARD_PRODUCT = "SET_CARD_PRODUCT";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
-export const INCREMENT_QNTY = "INCREMENT_QNTY";
-export const DECREMENT_QNTY = "DECREMENT_QNTY";
 
 const initState = {
     SelectedProduct: [],

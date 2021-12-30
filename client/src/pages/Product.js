@@ -2,19 +2,18 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct } from "../asyncMethod/asyncAction";
-import {SET_CARD_PRODUCT, DECREMENT_QNTY, INCREMENT_QNTY} from "../store/ProductReducer";
+import {SET_CARD_PRODUCT} from "../store/ProductReducer";
 
 const Product = () => {
     const [product, setProduct] = useState([{}]);
     const [qnty, setQnty] = useState(1);
     const dispatch = useDispatch();
     const { SelectedProduct } = useSelector(state => state.ProductReducer);
-    console.log(SelectedProduct[0]);
+    //console.log(SelectedProduct[0]);
     const { id } = useParams();
     const addProduct = () => {
         const { _id, photo, p_name, actual_price, discount_price } = product;
-        dispatch({ type: SET_CARD_PRODUCT, paylood: { id: _id, photo, p_name, actual_price: actual_price*qnty, discount_price: discount_price*qnty, quantity: qnty } });
-        console.log("runnn")
+        dispatch({ type: SET_CARD_PRODUCT, paylood: { id: _id, photo, p_name, actual_price: actual_price, discount_price: discount_price, quantity: qnty } });
     }
     useEffect(() => {
         dispatch(fetchProduct(id));

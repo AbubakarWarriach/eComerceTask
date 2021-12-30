@@ -62,7 +62,7 @@ const AddProduct = () => {
                                     />
                                     <div className="my-1">
                                         {
-                                            preview && <img src={preview} alt="preview" width="100%" height="100%" />
+                                            preview && <img src={preview} alt="preview" width="200" height="100%" />
                                         }
                                     </div>
                                     <button onClick={(e) => { fileRef.current.click(); e.preventDefault() }}
